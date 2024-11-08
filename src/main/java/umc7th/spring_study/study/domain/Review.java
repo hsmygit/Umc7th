@@ -18,8 +18,6 @@ public class Review extends BaseEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String title;
-
     private String body;
 
     private Float score;
@@ -34,4 +32,15 @@ public class Review extends BaseEntity {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "store_id")
     private Store store;
+
+    @Override
+    public String toString() {
+        return "Review{" +
+                "id=" + id +
+                ", body='" + body + '\'' +
+                ", score=" + score +
+                ", member=" + (member != null ? member.getName() : "N/A") + // user의 이름 출력
+                ", store=" + (store != null ? store.getName() : "N/A") + // store의 이름 출력
+                '}';
+    }
 }
