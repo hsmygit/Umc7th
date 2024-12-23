@@ -2,6 +2,9 @@ package umc7th.spring_study.study.domain;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.ColumnDefault;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 import umc7th.spring_study.study.domain.common.BaseEntity;
 import umc7th.spring_study.study.domain.enums.Gender;
 import umc7th.spring_study.study.domain.enums.MemberStatus;
@@ -16,6 +19,8 @@ import java.util.List;
 
 @Entity
 @Getter
+@DynamicUpdate
+@DynamicInsert
 @Builder
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @AllArgsConstructor
@@ -47,14 +52,15 @@ public class Member extends BaseEntity {
 
     private LocalDate inactiveDate;
 
-    @Column(nullable = false, length = 50)
+    //@Column(nullable = false, length = 50)
     private String email;
 
-    @Column(nullable = false, length = 15)
+    //@Column(nullable = false, length = 15)
     private String phone_number;
 
     private Boolean is_phone_verified;
 
+    @ColumnDefault("0")
     private Integer point;
     @OneToMany(mappedBy = "member", cascade = CascadeType.ALL)
     private List<MemberAgree> memberAgreeList = new ArrayList<>();

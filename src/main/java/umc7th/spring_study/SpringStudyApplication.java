@@ -1,24 +1,8 @@
 package umc7th.spring_study;
 
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
-import umc7th.spring_study.study.domain.Member;
-import umc7th.spring_study.study.domain.Mission;
-import umc7th.spring_study.study.domain.Review;
-import umc7th.spring_study.study.domain.Store;
-import umc7th.spring_study.study.domain.mapping.MemberMission;
-import umc7th.spring_study.study.repository.MemberMissionRepository.MemberMissionRepository;
-import umc7th.spring_study.study.repository.MemberRepository.MemberRepository;
-import umc7th.spring_study.study.repository.StoreRepository.StoreRepository;
-import umc7th.spring_study.study.service.MemberMissionService.MemberMissionQueryService;
-import umc7th.spring_study.study.service.MemberService.MemberQueryService;
-import umc7th.spring_study.study.service.ReviewService.ReviewQueryService;
-import umc7th.spring_study.study.service.StoreService.StoreQueryService;
-
-import java.util.List;
 
 @SpringBootApplication
 @EnableJpaAuditing
